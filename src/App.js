@@ -9,7 +9,11 @@ const App = () => {
     setIsLoggedIn(true);
   };
 
-  return <>{isLoggedIn ? <AdminPanel /> : <LoginPage onLogin={handleLogin} />}</>;
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+  };
+
+  return <>{isLoggedIn ? <AdminPanel onLogout={handleLogout} /> : <LoginPage onLogin={handleLogin} />}</>;
 };
 
 export default App;
