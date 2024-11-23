@@ -10,7 +10,7 @@ const LoginPage = ({ onLogin }) => {
     const savedCredentials = JSON.parse(localStorage.getItem('users')) || {};
 
     if (savedCredentials[username] && savedCredentials[username] === password) {
-      onLogin(); // Successfully logged in
+      onLogin(username); // Pass the logged-in username to App
     } else {
       setError('Invalid username or password');
     }

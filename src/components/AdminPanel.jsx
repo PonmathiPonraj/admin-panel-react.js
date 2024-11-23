@@ -3,7 +3,7 @@ import UserManagement from './UserManagement';
 import RoleManagement from './RoleManagement';
 import PermissionsManager from './PermissionsManager';
 
-const AdminPanel = ({ onLogout }) => {
+const AdminPanel = ({ onLogout, username }) => {
   const [activeTab, setActiveTab] = useState('users');
 
   return (
@@ -11,9 +11,17 @@ const AdminPanel = ({ onLogout }) => {
       {/* Header */}
       <header className="d-flex justify-content-between align-items-center bg-dark text-white p-3">
         <h2 className="m-0">Admin Panel</h2>
-        <button className="btn btn-danger" onClick={onLogout}>
-          Logout
-        </button>
+        <div className="d-flex align-items-center">
+          <div className="d-flex align-items-center me-3">
+            <span className="me-2">
+              <i className="bi bi-person-circle" style={{ fontSize: '1.5rem' }}></i>
+            </span>
+            <span>{username}</span>
+          </div>
+          <button className="btn btn-danger" onClick={onLogout}>
+            Logout
+          </button>
+        </div>
       </header>
 
       {/* Content Area */}

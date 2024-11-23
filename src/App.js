@@ -4,16 +4,27 @@ import AdminPanel from './components/AdminPanel';
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [username, setUsername] = useState(''); // Store the logged-in username
 
-  const handleLogin = () => {
+  const handleLogin = (loggedInUsername) => {
+    setUsername(loggedInUsername);
     setIsLoggedIn(true);
   };
 
   const handleLogout = () => {
     setIsLoggedIn(false);
+    setUsername('');
   };
 
-  return <>{isLoggedIn ? <AdminPanel onLogout={handleLogout} /> : <LoginPage onLogin={handleLogin} />}</>;
+  return (
+    <>
+      {isLoggedIn ? (
+        <AdminPanel onLogout={handleLogout} username={username} />
+      ) : (
+        <LoginPage onLogin={handleLogin} />
+      )}
+    </>
+  );
 };
 
 export default App;
