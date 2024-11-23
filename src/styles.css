@@ -3,25 +3,25 @@ body {
     background-color: #f8f9fa;
     margin: 0;
     padding: 0;
-  }
+}
   
-  .sidebar {
+.sidebar {
     position: fixed;
     top: 0;
     left: 0;
     height: 100%;
     overflow-y: auto;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-  }
+}
   
-  .content {
+.content {
     margin-left: 250px; /* Matches the sidebar width */
     padding: 20px;
     background-color: #ffffff;
     min-height: 100vh;
-  }
+}
   
-  .btn-dark:hover {
+.btn-dark:hover {
     background-color: #444;
-  }
+}
   
